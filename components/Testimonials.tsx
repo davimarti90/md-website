@@ -45,7 +45,7 @@ Notes: ${fd.get("notes")}`
       <textarea className="card md:col-span-2" name="notes" placeholder="Notes (volume, bedrooms, access, special items)" rows={5} />
       <div className="md:col-span-2 flex gap-3">
         <button type="submit" className="btn-primary" disabled={loading}>{loading ? "Sending…" : "Request Quote"}</button>
-        <a className="btn-ghost" href="mailto:mdinterstatemovingllc@gmail.com">Email Instead</a>
+        <a className="btn-ghost" href="tel:+19086259955">Call Instead</a>
       </div>
     </form>
   );

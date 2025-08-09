@@ -16,9 +16,10 @@ export default function Footer() {
         <div>
           <h4 className="text-white font-semibold mb-3">Legal</h4>
           <ul className="space-y-2">
-            <li><a href="#" className="hover:underline">Terms</a></li>
-            <li><a href="#" className="hover:underline">Privacy</a></li>
-            <li><a href="#" className="hover:underline">Licensing</a></li>
+            <li>Phone: +1 908-625-9955</li>
+            <li>Email: admin@mdinterstatemoving.com</li>
+            <li>Address: 134 Somerset 2 Fl, North Plainfield, NJ 07060</li>
+            <li>Service area: Interstate (USA) — based in New Jersey</li>
           </ul>
         </div>
       </div>

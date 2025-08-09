@@ -16,7 +16,7 @@ export default function Navbar() {
           <Link href="#services" className="hover:text-white">Services</Link>
           <Link href="#process" className="hover:text-white">Process</Link>
           <Link href="/contact" className="hover:text-white">Contact</Link>
-          <a href="mailto:mdinterstatemovingllc@gmail.com" className="btn-primary">Email</a>
+          <a href="mailto:admin@mdinterstatemoving.com" className="btn-primary">Email</a>
         </nav>
         <button className="md:hidden btn-ghost px-3 py-2" onClick={() => setOpen(!open)} aria-label="Toggle Menu">
           <span>Menu</span>
@@ -28,7 +28,7 @@ export default function Navbar() {
             <Link href="#services" onClick={() => setOpen(false)}>Services</Link>
             <Link href="#process" onClick={() => setOpen(false)}>Process</Link>
             <Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
-            <a href="mailto:mdinterstatemovingllc@gmail.com" className="btn-primary w-max" onClick={() => setOpen(false)}>Email</a>
+            <a href="mailto:admin@mdinterstatemoving.com" className="btn-primary w-max" onClick={() => setOpen(false)}>Email</a>
           </div>
         </div>
       )}
