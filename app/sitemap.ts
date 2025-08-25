@@ -1,0 +1,1 @@
+export default function sitemap(){return [{url:'https://mdinterstatemoving.com/',lastModified:new Date()},{url:'https://mdinterstatemoving.com/contact',lastModified:new Date()}]}
