@@ -1,22 +1,41 @@
+// app/components/Process.tsx
+"use client";
+
+import processBg from "@/public/process.jpg";
+
+const steps = [
+  { n: "01", t: "Request your quote", d: "Tell us the basics—origin, destination, date, and inventory." },
+  { n: "02", t: "No-broker transparent price", d: "Direct with MD Interstate Moving. No middlemen, no hidden fees." },
+  { n: "03", t: "Pack & protect", d: "We pad-wrap furniture, protect floors and doorways, and secure fragile items." },
+  { n: "04", t: "Pickup & same-day NJ delivery", d: "In-state (NJ) moves can be done end-to-end in the same day." },
+  { n: "05", t: "Unload & placement", d: "We place items where you want them and remove all packing materials." },
+];
+
 export default function Process() {
-  const steps = [
-    { n: 1, t: "Virtual or On-site Estimate", d: "We assess access, volume and timing to give you a precise quote." },
-    { n: 2, t: "Packing & Loading", d: "Careful protection, inventory and secure loading with platinum option." },
-    { n: 3, t: "Transit & Tracking", d: "Interstate transit with updates and guaranteed delivery windows." },
-    { n: 4, t: "Delivery & Setup", d: "Room-by-room placement, reassembly and debris removal." },
-  ]
   return (
-    <div>
-      <h2 className="text-3xl md:text-5xl font-bold mb-10">How It Works</h2>
-      <ol className="grid md:grid-cols-2 gap-6">
-        {steps.map((s) => (
-          <li key={s.n} className="card">
-            <div className="text-mdGold font-bold">Step {s.n}</div>
-            <div className="text-xl font-semibold mt-1">{s.t}</div>
-            <p className="text-white/75 mt-2">{s.d}</p>
-          </li>
-        ))}
-      </ol>
-    </div>
-  )
+    <section id="process" className="relative py-16 md:py-24">
+      <div
+        className="absolute inset-0 -z-10"
+        style={{
+          backgroundImage: `url(${processBg.src})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+      <div className="absolute inset-0 -z-10 bg-black/70" />
+
+      <div className="container px-4 text-white">
+        <h2 className="text-3xl md:text-4xl font-bold">How It Works</h2>
+        <div className="mt-10 grid md:grid-cols-5 gap-6">
+          {steps.map((s) => (
+            <div key={s.n} className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
+              <div className="text-amber-400 font-extrabold text-xl">{s.n}</div>
+              <h3 className="mt-2 font-semibold">{s.t}</h3>
+              <p className="mt-1 text-neutral-200 text-sm">{s.d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

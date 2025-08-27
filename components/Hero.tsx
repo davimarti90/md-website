@@ -1,28 +1,39 @@
-import Image from 'next/image'
-import Link from 'next/link'
+// app/components/Hero.tsx
+"use client";
+
+import heroBg from "@/public/hero-bg.jpg";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden">
-      <Image src="/images/hero-bg.jpg" alt="" fill className="object-cover opacity-25 -z-10" priority />
-      <div className="container-md py-24 md:py-36">
-        <div className="max-w-3xl">
-          <div className="badge mb-4">25 Years • Licensed • Insured</div>
-          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-            No Brokers. Just Movers.<br/>
-            <span className="text-mdGold">Premium interstate & same-day NJ moves.</span>
-          </h1>
-          <p className="mt-6 text-lg lead">
-            We’re a direct moving company — <strong>No Broker Fee</strong>. One team from quote to delivery.
-            Technology-enabled planning, careful packing, on-time arrivals.
-          </p>
-          <div className="mt-10 flex items-center gap-4">
-            <Link href="/contact" className="btn-primary">Get a Free Quote</Link>
-            <a href="#services" className="btn-ghost">See Services</a>
-            <a href="mailto:admin@mdinterstatemoving.com" className="btn-ghost">Email Us</a>
-          </div>
+    <section
+      className="relative min-h-[70vh] md:min-h-[82vh] flex items-center justify-center text-center"
+      style={{
+        backgroundImage: `url(${heroBg.src})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="absolute inset-0 bg-black/60" />
+      <div className="relative z-10 container px-4">
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white">
+          Fast. Safe. Professional.
+        </h1>
+        <p className="mt-4 md:mt-6 text-neutral-200 md:text-lg max-w-2xl mx-auto">
+          State & Interstate Moving — <b>No Broker Fee.</b>
+        </p>
+        <div className="mt-8 flex gap-3 justify-center">
+          <a href="#quote" className="px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-semibold">
+            Get Your Free Quote
+          </a>
+          <a href="#services" className="px-5 py-3 rounded-xl border border-neutral-300/40 text-white hover:bg-white/10">
+            Our Services
+          </a>
+          <a href="mailto:support@mdinterstatemoving.com" className="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white">
+            Email Us
+          </a>
         </div>
       </div>
     </section>
-  )
+  );
 }
+

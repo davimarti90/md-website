@@ -1,35 +1,62 @@
-import Image from 'next/image'
+// app/components/Services.tsx
+"use client";
+
+import servicesHero from "@/public/services-hero.jpg";
+import platinumImg from "@/public/platinum-packing.jpg";
 
 export default function Services() {
-  const services = [
-    { title: "Same-Day New Jersey Moves", desc: "Pickup & delivery the same day across NJ. Precise scheduling, condo/HOA friendly." },
-    { title: "Interstate Moves", desc: "State-to-state relocations with guaranteed delivery windows and real-time updates." },
-    { title: "Platinum Packing", desc: "Premium packing for glass, TVs, art and antiques with custom crating and foam corners." },
-    { title: "Furniture Protection", desc: "Blankets, shrink wrap and door/jamb protection every time." },
-    { title: "Storage Options", desc: "Short & long-term, climate-aware storage when you need it." },
-    { title: "Special Items", desc: "Pianos, safes, oversized items — planned and handled with care." },
-  ]
   return (
-    <div>
-      <section className="relative overflow-hidden rounded-2xl mb-10 border border-white/10">
-        <Image src="/images/services-hero.jpg" alt="" fill className="object-cover opacity-30 -z-10" />
-        <div className="p-10 md:p-14">
-          <h2 className="text-3xl md:text-5xl font-bold">Our Professional State & Interstate Moving Services</h2>
-          <p className="lead mt-3 max-w-2xl">
-            From local moves within New Jersey — with same-day pickup and delivery — to full interstate relocations,
-            we handle every step with precision, safety, and care. Always with transparent pricing and no brokers involved.
-          </p>
-        </div>
-      </section>
+    <section id="services" className="relative py-16 md:py-24">
+      <div
+        className="absolute inset-0 -z-10"
+        style={{
+          backgroundImage: `url(${servicesHero.src})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "grayscale(30%)",
+        }}
+      />
+      <div className="absolute inset-0 -z-10 bg-black/60" />
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {services.map((s) => (
-          <div key={s.title} className="card">
-            <h3 className="text-xl font-semibold mb-2 text-mdGold">{s.title}</h3>
-            <p className="text-white/75">{s.desc}</p>
+      <div className="container px-4 text-white">
+        <h2 className="text-3xl md:text-4xl font-bold">Moving Services</h2>
+        <p className="mt-2 text-neutral-200 max-w-3xl">
+          State & Interstate moves, with emphasis on **same-day pickup & delivery within New Jersey**.
+        </p>
+
+        <div className="mt-10 grid md:grid-cols-3 gap-6">
+          {[
+            "Local & State Moves (NJ same-day)",
+            "Interstate Moves (East Coast & beyond)",
+            "Packing & Unpacking",
+            "Heavy / Specialty Items",
+            "Storage Coordination",
+            "Furniture Protection (blankets, wrap)",
+          ].map((t) => (
+            <div key={t} className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
+              <h3 className="font-semibold">{t}</h3>
+            </div>
+          ))}
+
+          {/* Platinum Packing (premium) */}
+          <div
+            className="md:col-span-3 rounded-2xl overflow-hidden border border-amber-500/40"
+            style={{
+              backgroundImage: `url(${platinumImg.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <div className="bg-black/60 p-6 md:p-8">
+              <h3 className="text-2xl font-bold text-amber-400">Platinum Packing</h3>
+              <p className="mt-2 max-w-3xl text-neutral-200">
+                White-glove packing with extreme care: double-wrapping, custom padding, inventory tags, and priority handling from door to door.
+              </p>
+            </div>
           </div>
-        ))}
+        </div>
       </div>
-    </div>
-  )
+    </section>
+  );
 }
+
