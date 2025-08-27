@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
-import { sendMail } from '@/lib/mailer'
+import { sendMail } from '@/lib/mailer' // Next resolverá mailer.js sin problema
 
 export const runtime = 'nodejs'
 
