@@ -6,7 +6,7 @@
       "dom.iterable",
       "es2022"
     ],
-    "allowJs": false,
+    "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
@@ -38,19 +38,3 @@
     "node_modules"
   ]
 }
-{
-  "compilerOptions": {
-    "allowJs": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "target": "ES2022",
-    "strict": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "paths": { "@/*": ["./*"] }
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
-}
-
