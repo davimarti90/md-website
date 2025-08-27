@@ -18,3 +18,4 @@ export async function sendMail({ to, subject, html, replyTo }: { to: string, sub
   const transporter = getTransport()
   await transporter.sendMail({ from, to, subject, html, replyTo })
 }
+
