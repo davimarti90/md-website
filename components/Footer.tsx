@@ -11,7 +11,7 @@ export default function Footer() {
           <ul className="space-y-2">
             <li>Email: support@mdinterstatemoving.com</li>
             <li>Phone: +1 908-625-9955</li>
-            <li>Service: New Jersey (same-day) & Interstate (USA)</li>
+            <li>Service: New Jersey & Interstate (USA)</li>
           </ul>
         </div>
         <div>

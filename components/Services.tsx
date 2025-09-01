@@ -1,62 +1,49 @@
-// app/components/Services.tsx
-"use client";
+// components/Services.tsx
+import Image from "next/image";
 
-import servicesHero from "@/public/services-hero.jpg";
-import platinumImg from "@/public/platinum-packing.jpg";
+const items = [
+  { title: "Local (NJ Same-Day)", desc: "Pick up & delivery the same day inside New Jersey." },
+  { title: "Interstate", desc: "Door-to-door moves across the U.S. — fast and safe." },
+  { title: "Packing & Unpacking", desc: "Full packing, labeling and room-by-room setup." },
+  { title: "Platinum Packing", desc: "Premium white-glove service with extra protection." },
+  { title: "Furniture Protection", desc: "Wrapping, padding and disassembly/assembly." },
+  { title: "Storage & Logistics", desc: "Short/long-term storage and flexible scheduling." },
+];
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-16 md:py-24">
-      <div
-        className="absolute inset-0 -z-10"
-        style={{
-          backgroundImage: `url(${servicesHero.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          filter: "grayscale(30%)",
-        }}
-      />
-      <div className="absolute inset-0 -z-10 bg-black/60" />
+    <section id="services" className="section container-md max-w-6xl mx-auto px-6 py-16">
+      <div className="grid lg:grid-cols-2 gap-10 items-center">
+        {/* Imagen lateral */}
+        <div className="relative h-[420px] sm:h-[480px] lg:h-[560px] rounded-2xl overflow-hidden">
+          <Image
+            src="/images/services-hero.jpg"
+            alt="MD Interstate Moving — services"
+            fill
+            className="object-cover"
+            sizes="(min-width:1024px) 50vw, 100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+        </div>
 
-      <div className="container px-4 text-white">
-        <h2 className="text-3xl md:text-4xl font-bold">Moving Services</h2>
-        <p className="mt-2 text-neutral-200 max-w-3xl">
-          State & Interstate moves, with emphasis on **same-day pickup & delivery within New Jersey**.
-        </p>
+        {/* Lista de servicios */}
+        <div>
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-white">State & Interstate Moving</h2>
+          <p className="text-white/80 mb-8">
+            We specialize in **state** and **interstate** moves. For New Jersey,
+            we offer **same-day pick up & delivery** when possible.
+          </p>
 
-        <div className="mt-10 grid md:grid-cols-3 gap-6">
-          {[
-            "Local & State Moves (NJ same-day)",
-            "Interstate Moves (East Coast & beyond)",
-            "Packing & Unpacking",
-            "Heavy / Specialty Items",
-            "Storage Coordination",
-            "Furniture Protection (blankets, wrap)",
-          ].map((t) => (
-            <div key={t} className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
-              <h3 className="font-semibold">{t}</h3>
-            </div>
-          ))}
-
-          {/* Platinum Packing (premium) */}
-          <div
-            className="md:col-span-3 rounded-2xl overflow-hidden border border-amber-500/40"
-            style={{
-              backgroundImage: `url(${platinumImg.src})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-            <div className="bg-black/60 p-6 md:p-8">
-              <h3 className="text-2xl font-bold text-amber-400">Platinum Packing</h3>
-              <p className="mt-2 max-w-3xl text-neutral-200">
-                White-glove packing with extreme care: double-wrapping, custom padding, inventory tags, and priority handling from door to door.
-              </p>
-            </div>
-          </div>
+          <ul className="grid sm:grid-cols-2 gap-4">
+            {items.map((it) => (
+              <li key={it.title} className="rounded-xl border border-white/10 bg-white/5 p-4">
+                <h3 className="font-semibold text-white">{it.title}</h3>
+                <p className="text-sm text-white/70 mt-1">{it.desc}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
   );
 }
-

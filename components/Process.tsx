@@ -1,39 +1,45 @@
-// app/components/Process.tsx
-"use client";
-
-import processBg from "@/public/process.jpg";
+// components/Process.tsx
+import Image from "next/image";
 
 const steps = [
-  { n: "01", t: "Request your quote", d: "Tell us the basics—origin, destination, date, and inventory." },
-  { n: "02", t: "No-broker transparent price", d: "Direct with MD Interstate Moving. No middlemen, no hidden fees." },
-  { n: "03", t: "Pack & protect", d: "We pad-wrap furniture, protect floors and doorways, and secure fragile items." },
-  { n: "04", t: "Pickup & same-day NJ delivery", d: "In-state (NJ) moves can be done end-to-end in the same day." },
-  { n: "05", t: "Unload & placement", d: "We place items where you want them and remove all packing materials." },
+  { n: "01", t: "Free Quote", d: "Tell us the basics and get a fast, clear estimate." },
+  { n: "02", t: "Plan & Protect", d: "We schedule, label, wrap and protect every item." },
+  { n: "03", t: "Move Day", d: "Professional crew, careful handling, real-time coordination." },
+  { n: "04", t: "Delivery & Setup", d: "Furniture placed and assembled — you just enjoy." },
 ];
 
 export default function Process() {
   return (
-    <section id="process" className="relative py-16 md:py-24">
-      <div
-        className="absolute inset-0 -z-10"
-        style={{
-          backgroundImage: `url(${processBg.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      />
-      <div className="absolute inset-0 -z-10 bg-black/70" />
+    <section id="process" className="max-w-6xl mx-auto px-6 py-16">
+      <div className="grid lg:grid-cols-2 gap-10 items-center">
+        {/* Texto / pasos */}
+        <div>
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-white">How We Move</h2>
+          <ol className="space-y-4">
+            {steps.map((s) => (
+              <li key={s.n} className="flex gap-4">
+                <div className="shrink-0 h-10 w-10 rounded-full bg-amber-500 text-black font-bold grid place-items-center">
+                  {s.n}
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-white">{s.t}</h3>
+                  <p className="text-white/70 text-sm">{s.d}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
 
-      <div className="container px-4 text-white">
-        <h2 className="text-3xl md:text-4xl font-bold">How It Works</h2>
-        <div className="mt-10 grid md:grid-cols-5 gap-6">
-          {steps.map((s) => (
-            <div key={s.n} className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
-              <div className="text-amber-400 font-extrabold text-xl">{s.n}</div>
-              <h3 className="mt-2 font-semibold">{s.t}</h3>
-              <p className="mt-1 text-neutral-200 text-sm">{s.d}</p>
-            </div>
-          ))}
+        {/* Imagen */}
+        <div className="relative h-[420px] sm:h-[480px] lg:h-[560px] rounded-2xl overflow-hidden">
+          <Image
+            src="/images/process.jpg"
+            alt="MD Interstate Moving — process"
+            fill
+            className="object-cover"
+            sizes="(min-width:1024px) 50vw, 100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
         </div>
       </div>
     </section>
