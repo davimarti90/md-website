@@ -11,7 +11,6 @@ export default function Page() {
   return (
     <>
       <TopBar />
-      <Contact />
       <Hero />
       <section id="services" className="section container-md">
         <Services />
@@ -28,6 +27,7 @@ export default function Page() {
       <section id="contact" className="section container-md">
         <CTA />
       </section>
+       <Contact />
     </>
   )
 }
