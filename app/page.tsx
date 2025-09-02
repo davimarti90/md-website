@@ -11,6 +11,8 @@ export default function Page() {
   return (
     <>
       <TopBar />
+      {/* Offset para que la barra fija no tape el contenido */}
+      <div className="pt-16 lg:pt-20"></div>
       <Hero />
       <section id="services" className="section container-md">
         <Services />
