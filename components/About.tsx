@@ -1,14 +1,14 @@
-// components/About.tsx (o donde tengas este componente)
+// components/About.tsx
 export default function About() {
   return (
     <section id="about" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid items-center gap-12 md:grid-cols-2">
-          {/* Imagen About - usa /public/images/about.jpg */}
+          {/* Imagen About - ahora desde /public/about.jpg */}
           <div className="relative w-full">
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-white/10 shadow-[0_0_35px_rgba(255,255,255,0.08)]">
               <img
-                src="/images/about.jpg?v=6" // cache-busting, NO usar /public/ en la ruta
+                src="/about.jpg?v=7" // cache-busting y SIN /public en la ruta
                 alt="MD Interstate Moving — professional team handling your move with care"
                 className="block h-full w-full object-cover object-center"
                 loading="lazy"
@@ -19,25 +19,28 @@ export default function About() {
           {/* Texto */}
           <div className="space-y-6">
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-              About <span className="bg-gradient-to-r from-yellow-400 to-yellow-200 bg-clip-text text-transparent">MD Interstate Moving</span>
+              25 Years, New Tech, <span className="bg-gradient-to-r from-yellow-400 to-yellow-200 bg-clip-text text-transparent">Same Craft</span>
             </h2>
             <p className="text-base/7 text-white/80">
-              We are a New Jersey–based interstate moving team focused on premium service: careful packing,
-              reliable scheduling, and clear communication from quote to delivery. Our process combines
-              years of field experience with modern tools to keep your move organized and safe.
+              MD Interstate Moving is a New Jersey–based moving company. After two decades on the road, we rebuilt our operations with modern tools so you get
+              faster estimates, smarter planning, and the same careful hands we’re known for — always with transparent pricing and no brokers involved.
             </p>
-            <ul className="space-y-3 text-white/80">
+            <ul className="grid gap-3 text-white/80 md:grid-cols-2">
               <li className="flex items-start gap-3">
                 <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-yellow-400/90" />
-                Trained movers, labeled inventory, and protective materials for furniture & electronics.
+                No Broker Fee — talk to the crew that will move you
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-yellow-400/90" />
-                Transparent estimates with services & payments broken down—no surprises.
+                Licensed &amp; Insured
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-yellow-400/90" />
-                Tech-enabled workflow to track documents, signatures, and your job number.
+                Tech-assisted estimates &amp; routing
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-yellow-400/90" />
+                Transparent pricing &amp; guaranteed delivery windows
               </li>
             </ul>
 
