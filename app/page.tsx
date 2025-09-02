@@ -5,11 +5,13 @@ import Process from '@/components/Process'
 import CTA from '@/components/CTA'
 import About from '@/components/About'
 import { Testimonials } from '@/components/Testimonials'
+import Contact from "@/components/Contact";
 
 export default function Page() {
   return (
     <>
       <TopBar />
+      <Contact />
       <Hero />
       <section id="services" className="section container-md">
         <Services />
