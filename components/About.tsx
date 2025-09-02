@@ -1,25 +1,21 @@
 // components/About.tsx
 import Image from "next/image";
-import aboutImg from "/public/about.jpg"; // Asegúrate: public/about.jpg (minúsculas)
 
-export default function About() {
+function About() {
   return (
     <section id="about" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid items-center gap-12 md:grid-cols-2">
-          {/* Imagen About - import estático, sin query params */}
+          {/* Imagen fija, directa desde /public/about.jpg */}
           <div className="relative w-full">
-            <div
-              className="relative w-full overflow-hidden rounded-2xl border border-white/10 shadow-[0_0_35px_rgba(255,255,255,0.08)]"
-              style={{ aspectRatio: "4 / 3" }}
-            >
+            <div className="rounded-2xl border border-white/10 overflow-hidden inline-block">
               <Image
-                src={aboutImg}
-                alt="MD Interstate Moving — professional team handling your move with care"
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover object-center"
+                src="/about.jpg"               // debe existir EXACTO en public/about.jpg
+                alt="MD Interstate Moving — professional team"
+                width={1200}
+                height={900}
                 priority
+                unoptimized
               />
             </div>
           </div>
@@ -51,18 +47,13 @@ export default function About() {
                 Transparent pricing &amp; guaranteed delivery windows
               </li>
             </ul>
-
-            <div className="pt-2">
-              <a
-                href="#services"
-                className="inline-flex items-center rounded-xl border border-yellow-400/30 bg-yellow-400/10 px-4 py-2 text-sm font-medium text-yellow-200 backdrop-blur-sm transition hover:border-yellow-400/60 hover:bg-yellow-400/20"
-              >
-                Explore our services
-              </a>
-            </div>
           </div>
         </div>
       </div>
     </section>
   );
 }
+
+export default About;
+// 👇 Esto permite importar también como nombrado: `import { About } from '@/components/About'`
+export { About };
