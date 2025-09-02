@@ -2,7 +2,7 @@ import Hero from '@/components/Hero'
 import Services from '@/components/Services'
 import Process from '@/components/Process'
 import CTA from '@/components/CTA'
-import { About } from '@/components/About'
+import About from '@/components/About'
 import { Testimonials } from '@/components/Testimonials'
 
 export default function Page() {
