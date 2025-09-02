@@ -1,29 +1,15 @@
-import type { Metadata } from 'next'
-import './globals.css'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
+// app/layout.tsx
+import "./globals.css";
 
-export const metadata: Metadata = {
-  title: 'MD Interstate Moving — New Jersey & Interstate Movers',
-  description: 'Direct movers. No Broker Fee. Same-day NJ moves and interstate delivery windows.',
-  metadataBase: new URL('https://mdinterstatemoving.com'),
-  openGraph: {
-    title: 'MD Interstate Moving',
-    description: 'Direct movers. No Broker Fee. Same-day NJ moves and interstate delivery windows.',
-    url: 'https://mdinterstatemoving.com',
-    siteName: 'MD Interstate Moving',
-    type: 'website',
-  },
-}
+export const metadata = {
+  title: "MD Interstate Moving",
+  description: "State & Interstate Moving — No Broker Fee",
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
-  )
+  );
 }
