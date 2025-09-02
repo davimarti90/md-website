@@ -1,31 +1,27 @@
-// app/components/TopBar.tsx
+// components/TopBar.tsx
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import * as React from "react";
 
 export default function TopBar() {
-  const handleLogoError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    const img = e.currentTarget;
-    if (!img.dataset.fallback) {
-      img.dataset.fallback = "1";
-      img.src = "/images/logo-3d.jpg"; // fallback si el .png no existe
-    }
-  };
+  const [useJpg, setUseJpg] = React.useState(false);
 
   return (
-    <div className="sticky top-0 z-50 border-b border-white/10 bg-black/50 backdrop-blur supports-[backdrop-filter]:bg-black/40">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/50 backdrop-blur supports-[backdrop-filter]:bg-black/40">
       <div className="container-md flex items-center justify-between py-3">
         {/* Logo + Nombre */}
         <Link href="/" className="flex items-center gap-3">
           <span className="inline-flex h-10 w-10 md:h-11 md:w-11 overflow-hidden rounded-lg ring-1 ring-white/10 bg-white/5">
-            <img
-              src="/images/logo-3d.png"
-              onError={handleLogoError}
+            <Image
+              src={useJpg ? "/images/logo-3d.jpg?v=1" : "/images/logo-3d.png?v=1"}
               alt="MD Interstate Moving logo"
+              width={44}
+              height={44}
+              priority
               className="h-full w-full object-contain"
-              loading="eager"
-              decoding="async"
+              onError={() => setUseJpg(true)}
             />
           </span>
           <span className="text-lg md:text-xl font-bold tracking-wide">
@@ -46,7 +42,6 @@ export default function TopBar() {
           <a href="#contact" className="btn-primary px-3 py-2 text-sm">Quote</a>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
-
