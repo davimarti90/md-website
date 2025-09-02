@@ -1,6 +1,4 @@
-// components/Services.tsx
-import Image from "next/image";
-
+// app/components/Services.tsx
 const items = [
   { title: "Local (NJ Same-Day)", desc: "Pick up & delivery the same day inside New Jersey." },
   { title: "Interstate", desc: "Door-to-door moves across the U.S. — fast and safe." },
@@ -12,36 +10,33 @@ const items = [
 
 export default function Services() {
   return (
-    <section id="services" className="section container-md max-w-6xl mx-auto px-6 py-16">
-      <div className="grid lg:grid-cols-2 gap-10 items-center">
-        {/* Imagen lateral */}
-        <div className="relative h-[420px] sm:h-[480px] lg:h-[560px] rounded-2xl overflow-hidden">
-          <Image
-            src="/images/services-hero.jpg"
-            alt="MD Interstate Moving — services"
-            fill
-            className="object-cover"
-            sizes="(min-width:1024px) 50vw, 100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-        </div>
+    <section
+      id="services"
+      className="relative isolate"
+      style={{ minHeight: "60vh" }}
+    >
+      <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+        <img
+          src="/images/services-hero.jpg?v=5"
+          alt=""
+          aria-hidden="true"
+          className="h-full w-full object-cover object-center block"
+          loading="eager"
+        />
+        <div className="absolute inset-0" style={{ background: "rgba(0,0,0,.55)" }} />
+      </div>
 
-        {/* Lista de servicios */}
-        <div>
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-white">State & Interstate Moving</h2>
-          <p className="text-white/80 mb-8">
-            We specialize in **state** and **interstate** moves. For New Jersey,
-            we offer **same-day pick up & delivery** when possible.
-          </p>
+      <div className="container-md py-20 lg:py-28">
+        <h2 className="text-3xl md:text-4xl font-extrabold">State & Interstate Moving — Same-day NJ Delivery</h2>
+        <p className="mt-3 max-w-2xl text-white/80">Direct team. No intermediaries. Licensed & insured.</p>
 
-          <ul className="grid sm:grid-cols-2 gap-4">
-            {items.map((it) => (
-              <li key={it.title} className="rounded-xl border border-white/10 bg-white/5 p-4">
-                <h3 className="font-semibold text-white">{it.title}</h3>
-                <p className="text-sm text-white/70 mt-1">{it.desc}</p>
-              </li>
-            ))}
-          </ul>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((it) => (
+            <div key={it.title} className="card">
+              <h3 className="font-semibold text-white">{it.title}</h3>
+              <p className="text-sm text-white/70 mt-1">{it.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
