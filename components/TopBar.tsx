@@ -1,19 +1,29 @@
 // app/components/TopBar.tsx
 import Link from "next/link";
+import * as React from "react";
 
 export default function TopBar() {
+  const handleLogoError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = e.currentTarget;
+    if (!img.dataset.fallback) {
+      img.dataset.fallback = "1";
+      img.src = "/images/logo-3d.jpg"; // fallback si .png no existe
+    }
+  };
+
   return (
     <div className="sticky top-0 z-50 border-b border-white/10 bg-black/50 backdrop-blur supports-[backdrop-filter]:bg-black/40">
       <div className="container-md flex items-center justify-between py-3">
-        {/* Logo + Nombre */}
+        {/* Logo + Nombre (alineado a la izquierda) */}
         <Link href="/" className="flex items-center gap-3">
-          {/* ⚠️ Cambia el src si tu archivo tiene otro nombre/extension */}
-          <span className="inline-flex h-10 w-10 overflow-hidden rounded-lg ring-1 ring-white/10 bg-white/5">
+          <span className="inline-flex h-10 w-10 md:h-11 md:w-11 overflow-hidden rounded-lg ring-1 ring-white/10 bg-white/5">
             <img
               src="/images/logo-3d.png"
+              onError={handleLogoError}
               alt="MD Interstate Moving logo"
               className="h-full w-full object-contain"
               loading="eager"
+              decoding="async"
             />
           </span>
           <span className="text-lg md:text-xl font-bold tracking-wide">
