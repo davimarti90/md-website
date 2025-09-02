@@ -35,4 +35,13 @@ export default function Process() {
                 <div className="grid place-items-center h-full font-bold">{s.n}</div>
               </div>
               <div>
-                <h3 className="te
+                <h3 className="text-lg font-semibold text-white">{s.t}</h3>
+                <p className="text-white/70 text-sm">{s.d}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  );
+}
