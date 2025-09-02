@@ -1,3 +1,4 @@
+import TopBar from "@/components/TopBar";
 import Hero from '@/components/Hero'
 import Services from '@/components/Services'
 import Process from '@/components/Process'
@@ -8,6 +9,7 @@ import { Testimonials } from '@/components/Testimonials'
 export default function Page() {
   return (
     <>
+      <TopBar />
       <Hero />
       <section id="services" className="section container-md">
         <Services />
