@@ -27,14 +27,17 @@ export default function Services() {
       </div>
 
       <div className="container-md py-20 lg:py-28">
-        <h2 className="text-3xl md:text-4xl font-extrabold">State & Interstate Moving — Same-day NJ Delivery</h2>
-        <p className="mt-3 max-w-2xl text-white/80">Direct team. No intermediaries. Licensed & insured.</p>
+        {/* Tipografía más grande */}
+        <h2 className="text-4xl md:text-5xl font-extrabold">State & Interstate Moving — Same-day NJ Delivery</h2>
+        <p className="mt-3 max-w-2xl text-lg md:text-xl leading-relaxed text-white/80">
+          Direct team. No intermediaries. Licensed & insured.
+        </p>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((it) => (
             <div key={it.title} className="card">
-              <h3 className="font-semibold text-white">{it.title}</h3>
-              <p className="text-sm text-white/70 mt-1">{it.desc}</p>
+              <h3 className="text-xl md:text-2xl font-semibold text-white">{it.title}</h3>
+              <p className="mt-1 text-base md:text-lg leading-relaxed text-white/70">{it.desc}</p>
             </div>
           ))}
         </div>
