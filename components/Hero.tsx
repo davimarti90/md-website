@@ -56,10 +56,10 @@ export default function Hero() {
         <div className="mt-8 flex flex-wrap gap-4">
           <a href="#contact" className="btn-primary">Get a Free Quote</a>
           <a href="#services" className="btn-ghost">See Services</a>
-          <a href="mailto:admin@mdinterstatemoving.com" className="btn-ghost">Email Us</a>
+          {/* ⬇️ Cambiado a #contact (se acabó el mailto) */}
+          <a href="#contact" className="btn-ghost">Email Us</a>
         </div>
       </div>
     </section>
   );
 }
-
