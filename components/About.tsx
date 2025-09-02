@@ -1,17 +1,25 @@
 // components/About.tsx
+import Image from "next/image";
+import aboutImg from "/public/about.jpg"; // Asegúrate: public/about.jpg (minúsculas)
+
 export default function About() {
   return (
     <section id="about" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid items-center gap-12 md:grid-cols-2">
-          {/* Imagen About - ahora desde /public/about.jpg */}
+          {/* Imagen About - import estático, sin query params */}
           <div className="relative w-full">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-white/10 shadow-[0_0_35px_rgba(255,255,255,0.08)]">
-              <img
-                src="/about.jpg?v=7" // cache-busting y SIN /public en la ruta
+            <div
+              className="relative w-full overflow-hidden rounded-2xl border border-white/10 shadow-[0_0_35px_rgba(255,255,255,0.08)]"
+              style={{ aspectRatio: "4 / 3" }}
+            >
+              <Image
+                src={aboutImg}
                 alt="MD Interstate Moving — professional team handling your move with care"
-                className="block h-full w-full object-cover object-center"
-                loading="lazy"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover object-center"
+                priority
               />
             </div>
           </div>
@@ -56,5 +64,5 @@ export default function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }
